@@ -24,7 +24,7 @@ https.get('https://bpdts-test-app.herokuapp.com/users', res => {
 
             if(distance <= 50.00) users.push(dataResponse[i]);
         }
-
+        //Static HTML Page
     });
 
     

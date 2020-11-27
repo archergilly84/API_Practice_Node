@@ -36,7 +36,7 @@ https.get('https://bpdts-test-app.herokuapp.com/users', res => {
 
 
 
-https.get(`https://bpdts-test-app.herokuapp.com/city/${city}users`, res => {
+https.get(`https://bpdts-test-app.herokuapp.com/city/${city}/users`, res => {
     let responseData = '';
     
 

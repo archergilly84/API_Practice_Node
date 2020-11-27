@@ -4,9 +4,12 @@ const fs = require('fs');
 const londonLat = 51.509865;
 const londonLon = -0.118092;
 
+let city = "London"
+let users = [];
+
 https.get('https://bpdts-test-app.herokuapp.com/users', res => {
     let responseData = '';
-    let users = [];
+    
 
     res.on('data', data => {
         responseData += data;
@@ -27,13 +30,33 @@ https.get('https://bpdts-test-app.herokuapp.com/users', res => {
         //Static HTML Page
     });
 
-    
-
 }).on('error', err => {
     console.error(err.message);
 })
 
 
+
+https.get(`https://bpdts-test-app.herokuapp.com/city/${city}users`, res => {
+    let responseData = '';
+    
+
+    res.on('data', data => {
+        responseData += data;
+    });
+
+    res.on('end', () => {
+        let parsedData = JSON.parse(responseData);
+        for(var i = 0; i < parsedData.length; i++){
+            users.push(parsedData[i]);
+        }
+        
+    });
+
+}).on('error', err => {
+    console.error(err.message);
+})
+
+console.log(users);
 
 function getDistance(lat1, lat2, lon1 , lon2){
     const EarthRadiusKm = 6371

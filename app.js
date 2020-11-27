@@ -1,8 +1,8 @@
 const https = require('https');
 const fs = require('fs');
 
-const londonLat = 51.5074;
-const londonLon = 0.1278;
+const londonLat = 51.509865;
+const londonLon = -0.118092;
 
 https.get('https://bpdts-test-app.herokuapp.com/users', res => {
     let responseData = '';

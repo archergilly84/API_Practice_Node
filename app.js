@@ -34,7 +34,7 @@ https.get('https://bpdts-test-app.herokuapp.com/users', res => {
     console.error(err.message);
 })
 
-
+console.log(users);
 
 https.get(`https://bpdts-test-app.herokuapp.com/city/${city}/users`, res => {
     let responseData = '';
@@ -56,7 +56,7 @@ https.get(`https://bpdts-test-app.herokuapp.com/city/${city}/users`, res => {
     console.error(err.message);
 })
 
-console.log(users);
+
 
 function getDistance(lat1, lat2, lon1 , lon2){
     const EarthRadiusKm = 6371
